@@ -1,11 +1,181 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import { espacios } from "../data/espacios.js";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Sombra Cerca | Descubre espacios para descansar">
+
+  <!-- ENCABEZADO -->
+  <header class="bg-white shadow-sm">
+    <nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
+      <a href="/" class="text-2xl font-bold text-green-800">
+        🌳 Sombra Cerca
+      </a>
+
+      <div class="flex gap-6 items-center">
+        <a href="/" class="text-green-800 font-semibold">
+          Inicio
+        </a>
+
+        <a href="/espacios/" class="text-gray-600 hover:text-green-700">
+          Espacios
+        </a>
+
+        <a href="/favoritos/" class="text-gray-600 hover:text-green-700">
+          Favoritos ♡
+        </a>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- PORTADA -->
+  <main>
+
+    <section class="bg-green-900 text-white py-24 px-6">
+      <div class="max-w-6xl mx-auto text-center">
+
+        <p class="uppercase tracking-widest text-green-300 mb-4">
+          Descubre tu ciudad de otra manera
+        </p>
+
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          Encuentra tu espacio,
+          <br />
+          disfruta la sombra
+        </h1>
+
+        <p class="text-lg text-green-100 max-w-2xl mx-auto mb-8">
+          Explora parques, plazas y espacios naturales
+          donde puedes caminar, descansar y disfrutar
+          de un momento de tranquilidad.
+        </p>
+
+        <a
+          href="/espacios/"
+          class="inline-block bg-white text-green-900 px-8 py-4 rounded-full font-bold hover:bg-green-100 transition"
+        >
+          Explorar espacios →
+        </a>
+
+      </div>
+    </section>
+
+    <!-- PRESENTACIÓN -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-green-900 mb-4">
+          Descubre lugares para descansar
+        </h2>
+
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Conoce las características de los espacios urbanos:
+          árboles, sombra, asientos, agua, baños y accesibilidad.
+        </p>
+      </div>
+
+      <!-- LUGARES DESTACADOS -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        {espacios.slice(0, 3).map((lugar) => (
+
+          <article class="bg-white rounded-2xl shadow-md overflow-hidden">
+
+            <img
+              src={lugar.imagen}
+              alt={`Fotografía de ${lugar.nombre}`}
+              class="w-full h-56 object-cover"
+            />
+
+            <div class="p-6">
+
+              <span class="text-sm text-green-700 font-semibold uppercase">
+                {lugar.tipo}
+              </span>
+
+              <h3 class="text-xl font-bold text-gray-800 mt-2 mb-2">
+                {lugar.nombre}
+              </h3>
+
+              <p class="text-gray-500 mb-4">
+                📍 {lugar.zona}
+              </p>
+
+              <p class="text-gray-600 text-sm mb-5">
+                {lugar.descripcion}
+              </p>
+
+              <a
+                href={`/espacios/${lugar.slug}/`}
+                class="text-green-800 font-bold hover:underline"
+              >
+                Conocer más →
+              </a>
+
+            </div>
+
+          </article>
+
+        ))}
+
+      </div>
+
+    </section>
+
+    <!-- INFORMACIÓN -->
+    <section class="bg-green-50 py-16 px-6">
+
+      <div class="max-w-6xl mx-auto text-center">
+
+        <h2 class="text-3xl font-bold text-green-900 mb-10">
+          ¿Qué puedes encontrar?
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <div class="bg-white rounded-xl p-8 shadow-sm">
+            <div class="text-4xl mb-4">🌳</div>
+            <h3 class="font-bold text-xl mb-2">Sombra</h3>
+            <p class="text-gray-600">
+              Identifica lugares con árboles y zonas de protección solar.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-sm">
+            <div class="text-4xl mb-4">🪑</div>
+            <h3 class="font-bold text-xl mb-2">Descanso</h3>
+            <p class="text-gray-600">
+              Encuentra espacios que cuentan con asientos para descansar.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-xl p-8 shadow-sm">
+            <div class="text-4xl mb-4">♿</div>
+            <h3 class="font-bold text-xl mb-2">Accesibilidad</h3>
+            <p class="text-gray-600">
+              Consulta la información disponible sobre rampas y facilidades.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="bg-green-950 text-white text-center py-8 px-6">
+    <p class="font-semibold">Sombra Cerca 🌳</p>
+    <p class="text-green-200 text-sm mt-2">
+      Espacios para caminar, descansar y disfrutar.
+    </p>
+    <p class="text-green-300 text-xs mt-4">
+      Proyecto académico de desarrollo frontend.
+    </p>
+  </footer>
+
 </Layout>
