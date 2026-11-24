@@ -1,0 +1,155 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { espacios } from "../../data/espacios.js";
+
+export function getStaticPaths() {
+  return espacios.map((lugar) => ({
+    params: { slug: lugar.slug },
+    props: { lugar }
+  }));
+}
+
+const { lugar } = Astro.props;
+
+function mostrarDato(/** @type {boolean | null | undefined} */ valor) {
+  if (valor === true) return "Sí";
+  if (valor === false) return "No";
+  return "Sin información";
+}
+---
+
+
+<Layout title={`${lugar.nombre} | Sombra Cerca`}>
+
+  <!-- ENCABEZADO -->
+  <header class="bg-white shadow-sm">
+    <nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-green-800">
+        🌳 Sombra Cerca
+      </a>
+
+      <div class="flex gap-5">
+        <a href="/" class="text-gray-600">Inicio</a>
+        <a href="/espacios/" class="text-green-800 font-bold">Espacios</a>
+        <a href="/favoritos/" class="text-gray-600">Favoritos ♡</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12">
+
+    <!-- VOLVER -->
+    <a
+      href="/espacios/"
+      class="text-green-800 font-semibold hover:underline"
+    >
+      ← Volver a los espacios
+    </a>
+
+    <!-- INFORMACIÓN PRINCIPAL -->
+    <section class="mt-8">
+
+      <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-bold uppercase">
+        {lugar.tipo}
+      </span>
+
+      <h1 class="text-4xl font-bold text-green-950 mt-5 mb-3">
+        {lugar.nombre}
+      </h1>
+
+      <p class="text-gray-500 mb-8">
+        📍 {lugar.zona} · {lugar.direccion}
+      </p>
+
+      <img
+        src={lugar.imagen}
+        alt={`Fotografía de ${lugar.nombre}`}
+        class="w-full h-80 md:h-[450px] object-cover rounded-2xl shadow-lg"
+      />
+
+    </section>
+
+    <!-- DESCRIPCIÓN -->
+    <section class="mt-12">
+
+      <h2 class="text-2xl font-bold text-green-900 mb-4">
+        Sobre este espacio
+      </h2>
+
+      <p class="text-gray-600 leading-8">
+        {lugar.descripcion}
+      </p>
+
+    </section>
+
+    <!-- CARACTERÍSTICAS -->
+    <section class="mt-12">
+
+      <h2 class="text-2xl font-bold text-green-900 mb-6">
+        Características del lugar
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <div class="bg-green-50 p-6 rounded-xl">
+          <p class="text-3xl mb-3">🌳</p>
+          <h3 class="font-bold">Nivel de sombra</h3>
+          <p class="text-gray-600 mt-2">
+            {lugar.sombra ?? "Sin información"}
+          </p>
+        </div>
+
+        <div class="bg-green-50 p-6 rounded-xl">
+          <p class="text-3xl mb-3">🪑</p>
+          <h3 class="font-bold">Asientos</h3>
+          <p class="text-gray-600 mt-2">
+            {mostrarDato(lugar.asientos)}
+          </p>
+        </div>
+
+        <div class="bg-green-50 p-6 rounded-xl">
+          <p class="text-3xl mb-3">💧</p>
+          <h3 class="font-bold">Agua</h3>
+          <p class="text-gray-600 mt-2">
+            {mostrarDato(lugar.agua)}
+          </p>
+        </div>
+
+        <div class="bg-green-50 p-6 rounded-xl">
+          <p class="text-3xl mb-3">🚻</p>
+          <h3 class="font-bold">Baños</h3>
+          <p class="text-gray-600 mt-2">
+            {mostrarDato(lugar.banos)}
+          </p>
+        </div>
+
+        <div class="bg-green-50 p-6 rounded-xl">
+          <p class="text-3xl mb-3">♿</p>
+          <h3 class="font-bold">Rampas</h3>
+          <p class="text-gray-600 mt-2">
+            {mostrarDato(lugar.rampas)}
+          </p>
+        </div>
+
+        <div class="bg-green-50 p-6 rounded-xl">
+          <p class="text-3xl mb-3">💡</p>
+          <h3 class="font-bold">Iluminación</h3>
+          <p class="text-gray-600 mt-2">
+            {lugar.iluminacion ?? "Sin información"}
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="bg-green-950 text-white text-center py-8 mt-16">
+    <p class="font-bold">Sombra Cerca 🌳</p>
+    <p class="text-green-200 text-sm mt-2">
+      Espacios para caminar, descansar y disfrutar.
+    </p>
+  </footer>
+
+</Layout>

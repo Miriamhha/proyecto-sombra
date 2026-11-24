@@ -13,8 +13,8 @@ export const espacios = [
     asientos: true,
     agua: null,
     banos: null,
-    rampas: null,
-    iluminacion: true
+    rampas: true,
+    iluminacion: "media"
   },
   {
     id: 2,
@@ -26,11 +26,11 @@ export const espacios = [
     descripcion: "Parque urbano con jardines, vegetación y espacios de descanso.",
     imagen: "/img/lugares/lampa-oro.jfif",
     sombra: "media",
-    asientos: null,
+    asientos: true,
     agua: null,
     banos: null,
-    rampas: null,
-    iluminacion: null
+    rampas: true,
+    iluminacion: "media"
   },
   {
     id: 3,
@@ -42,11 +42,11 @@ export const espacios = [
     descripcion: "Parque urbano tranquilo con árboles y espacios para descansar.",
     imagen: "/img/lugares/parque-arguedas.jfif",
     sombra: "media",
-    asientos: null,
+    asientos: true,
     agua: null,
-    banos: null,
-    rampas: null,
-    iluminacion: null
+    banos: true,
+    rampas: true,
+    iluminacion: "baja"
   },
   {
     id: 4,
@@ -57,12 +57,12 @@ export const espacios = [
     direccion: "Avenida Martinelli",
     descripcion: "Espacio cultural y ornamental con monumento y elementos asociados al agua.",
     imagen: "/img/lugares/paccha-arguedas.jfif",
-    sombra: null,
-    asientos: null,
+    sombra: "media",
+    asientos: true,
     agua: null,
     banos: null,
     rampas: null,
-    iluminacion: null
+    iluminacion: "media"
   },
   {
     id: 5,
@@ -74,11 +74,11 @@ export const espacios = [
     descripcion: "Mirador natural rodeado de pinos y cipreses con vista panorámica de la ciudad.",
     imagen: "/img/lugares/huayhuaca.jfif",
     sombra: "alta",
-    asientos: null,
+    asientos: true,
     agua: null,
-    banos: null,
+    banos: true,
     rampas: null,
-    iluminacion: null
+    iluminacion: "alta"
   },
   {
     id: 6,
@@ -94,7 +94,7 @@ export const espacios = [
     agua: null,
     banos: null,
     rampas: null,
-    iluminacion: null
+    iluminacion: "alta"
   },
   {
     id: 7,
@@ -110,7 +110,7 @@ export const espacios = [
     agua: null,
     banos: null,
     rampas: null,
-    iluminacion: null
+    iluminacion: "alta"
   },
   {
     id: 8,
@@ -122,11 +122,11 @@ export const espacios = [
     descripcion: "Plaza con árboles frutales como capulí, durazno, ciruelo e intimpa.",
     imagen: "/img/lugares/plaza-talavera.jfif",
     sombra: "media",
-    asientos: null,
+    asientos: true,
     agua: null,
     banos: null,
     rampas: null,
-    iluminacion: null
+    iluminacion: "alta"
   },
   {
     id: 9,
@@ -138,11 +138,11 @@ export const espacios = [
     descripcion: "Entorno natural con bosques de eucalipto, áreas verdes y totorales.",
     imagen: "/img/lugares/laguna-pacucha.jfif",
     sombra: "media",
-    asientos: null,
+    asientos: true,
     agua: null,
     banos: null,
     rampas: null,
-    iluminacion: null
+    iluminacion: "alta"
   },
   {
     id: 10,
@@ -153,12 +153,12 @@ export const espacios = [
     direccion: "Centro de Pampachiri",
     descripcion: "Plaza histórica del distrito, punto de encuentro de habitantes y visitantes.",
     imagen: "/img/lugares/plaza-pampachiri.jfif",
-    sombra: null,
-    asientos: null,
+    sombra: "baja",
+    asientos: true,
     agua: null,
     banos: null,
     rampas: null,
-    iluminacion: null
+    iluminacion: "alta"
   },
   {
     id: 11,
@@ -169,12 +169,12 @@ export const espacios = [
     direccion: "Avenida El Ejército 610",
     descripcion: "Parque cultural que representa las actividades agrícolas y la identidad local.",
     imagen: "/img/lugares/parque-campesino.jfif",
-    sombra: null,
-    asientos: null,
+    sombra: "media",
+    asientos: true,
     agua: null,
     banos: null,
-    rampas: null,
-    iluminacion: null
+    rampas: true,
+    iluminacion: "alta"
   },
   {
     id: 12,
@@ -185,11 +185,11 @@ export const espacios = [
     direccion: "Sector urbano de Andahuaylas",
     descripcion: "Espacio recreativo infantil con juegos y áreas de encuentro familiar.",
     imagen: "/img/lugares/warma-kuyay.jpg",
-    sombra: null,
+    sombra: "baja",
     asientos: null,
     agua: null,
-    banos: null,
-    rampas: null,
-    iluminacion: null
+    banos: true,
+    rampas: true,
+    iluminacion: "alta"
   }
 ];

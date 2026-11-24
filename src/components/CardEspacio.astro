@@ -1,0 +1,93 @@
+
+---
+const { lugar } = Astro.props;
+
+const mostrarAsientos = (valor) => {
+  if (valor === true) return "Sí";
+  if (valor === false) return "No";
+  return "Sin información";
+};
+---
+
+<article
+  class="tarjeta-espacio bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition"
+  data-nombre={lugar.nombre.toLowerCase()}
+  data-zona={lugar.zona.toLowerCase()}
+  data-tipo={lugar.tipo.toLowerCase()}
+  data-sombra={lugar.sombra ?? ""}
+  data-asientos={
+    lugar.asientos === true
+      ? "si"
+      : lugar.asientos === false
+        ? "no"
+        : "sin-info"
+  }
+>
+
+  <!-- FOTOGRAFÍA -->
+  <img
+    src={lugar.imagen}
+    alt={`Fotografía de ${lugar.nombre}`}
+    class="w-full h-56 object-cover"
+    loading="lazy"
+  />
+
+  <div class="p-6">
+
+    <!-- TIPO -->
+    <span class="inline-block bg-green-100 text-green-800 text-xs font-bold uppercase px-3 py-1 rounded-full">
+      {lugar.tipo}
+    </span>
+
+    <!-- NOMBRE -->
+    <h3 class="text-xl font-bold text-gray-900 mt-3 mb-2">
+      {lugar.nombre}
+    </h3>
+
+    <!-- UBICACIÓN -->
+    <p class="text-gray-500 text-sm mb-4">
+      📍 {lugar.zona}
+    </p>
+
+    <!-- DESCRIPCIÓN -->
+    <p class="text-gray-600 text-sm mb-4">
+      {lugar.descripcion}
+    </p>
+
+    <!-- CARACTERÍSTICAS -->
+    <div class="border-t border-gray-100 pt-4 space-y-3">
+
+      <p class="text-sm text-gray-700">
+        🌳 <strong>Sombra:</strong> {lugar.sombra ?? "Sin información"}
+      </p>
+
+      <p class="text-sm text-gray-700">
+        🪑 <strong>Asientos:</strong> {mostrarAsientos(lugar.asientos)}
+      </p>
+
+    </div>
+
+    <!-- ACCIONES -->
+    <div class="flex justify-between items-center mt-5">
+
+      <a
+        href={`/espacios/${lugar.slug}/`}
+        class="bg-green-800 text-white px-4 py-2 rounded-lg hover:bg-green-900 transition"
+      >
+        Ver detalles
+      </a>
+
+      <button
+        type="button"
+        class="btn-favorito text-2xl"
+        data-slug={lugar.slug}
+        aria-label="Agregar a favoritos"
+        title="Agregar a favoritos"
+      >
+        ♡
+      </button>
+
+    </div>
+
+  </div>
+</article>

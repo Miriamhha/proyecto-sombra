@@ -1,0 +1,67 @@
+
+<section class="bg-green-50 rounded-2xl p-6 mb-10">
+
+  <h2 class="text-xl font-bold text-green-900 mb-5">
+    Buscar espacios
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+
+    <div>
+      <label for="busqueda" class="block text-sm font-semibold mb-2">
+        Buscar por nombre o zona
+      </label>
+      <input
+        id="busqueda"
+        type="search"
+        placeholder="Ej. Pacucha..."
+        class="w-full bg-white border border-gray-300 rounded-lg p-3"
+      />
+    </div>
+
+    <div>
+      <label for="tipo" class="block text-sm font-semibold mb-2">
+        Tipo de espacio
+      </label>
+      <select id="tipo" class="w-full bg-white border border-gray-300 rounded-lg p-3">
+        <option value="">Todos los tipos</option>
+        <option value="parque">Parques</option>
+        <option value="plaza">Plazas</option>
+        <option value="alameda">Alamedas</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="sombra" class="block text-sm font-semibold mb-2">
+        Nivel de sombra
+      </label>
+      <select id="sombra" class="w-full bg-white border border-gray-300 rounded-lg p-3">
+        <option value="">Todos los niveles</option>
+        <option value="alta">Alta</option>
+        <option value="media">Media</option>
+        <option value="baja">Baja</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="asientos" class="block text-sm font-semibold mb-2">
+        Disponibilidad de asientos
+      </label>
+      <select id="asientos" class="w-full bg-white border border-gray-300 rounded-lg p-3">
+        <option value="">Todos</option>
+        <option value="si">Con asientos</option>
+        <option value="no">Sin asientos</option>
+      </select>
+    </div>
+
+  </div>
+
+  <button
+    id="limpiar"
+    type="button"
+    class="mt-5 bg-green-800 text-white px-6 py-3 rounded-lg hover:bg-green-900 transition"
+  >
+    Limpiar filtros
+  </button>
+
+</section>
