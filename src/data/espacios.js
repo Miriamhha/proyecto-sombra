@@ -1,4 +1,201 @@
 
+// export const espacios = [
+//   {
+//     id: 1,
+//     slug: "plaza-armas-andahuaylas",
+//     nombre: "Plaza de Armas de Andahuaylas",
+//     tipo: "plaza",
+//     zona: "Andahuaylas",
+//     direccion: "Jirón Ramón Castilla 561",
+//     descripcion: "Plaza principal con árboles, jardines, bancas y pileta ornamental.",
+//     imagen: "/img/lugares/plaza-andahuaylas.jfif",
+//     sombra: "media",
+//     asientos: true,
+//     agua: null,
+//     banos: null,
+//     rampas: true,
+//     iluminacion: "media"
+//   },
+//   {
+//     id: 2,
+//     slug: "parque-lampa-de-oro",
+//     nombre: "Parque Lampa de Oro",
+//     tipo: "parque",
+//     zona: "Andahuaylas",
+//     direccion: "Avenida Perú 305-161",
+//     descripcion: "Parque urbano con jardines, vegetación y espacios de descanso.",
+//     imagen: "/img/lugares/lampa-oro.jfif",
+//     sombra: "media",
+//     asientos: true,
+//     agua: null,
+//     banos: null,
+//     rampas: true,
+//     iluminacion: "media"
+//   },
+//   {
+//     id: 3,
+//     slug: "parque-jose-maria-arguedas",
+//     nombre: "Parque José María Arguedas Altamirano",
+//     tipo: "parque",
+//     zona: "Andahuaylas",
+//     direccion: "Avenida Andahuaylas",
+//     descripcion: "Parque urbano tranquilo con árboles y espacios para descansar.",
+//     imagen: "/img/lugares/parque-arguedas.jfif",
+//     sombra: "media",
+//     asientos: true,
+//     agua: null,
+//     banos: true,
+//     rampas: true,
+//     iluminacion: "baja"
+//   },
+//   {
+//     id: 4,
+//     slug: "paccha-jose-maria-arguedas",
+//     nombre: "Paccha José María Arguedas",
+//     tipo: "parque",
+//     zona: "Andahuaylas",
+//     direccion: "Avenida Martinelli",
+//     descripcion: "Espacio cultural y ornamental con monumento y elementos asociados al agua.",
+//     imagen: "/img/lugares/paccha-arguedas.jfif",
+//     sombra: "media",
+//     asientos: true,
+//     agua: null,
+//     banos: null,
+//     rampas: null,
+//     iluminacion: "media"
+//   },
+//   {
+//     id: 5,
+//     slug: "mirador-apu-huayhuaca",
+//     nombre: "Mirador Apu Huayhuaca",
+//     tipo: "parque",
+//     zona: "Andahuaylas",
+//     direccion: "Cerro Huayhuaca",
+//     descripcion: "Mirador natural rodeado de pinos y cipreses con vista panorámica de la ciudad.",
+//     imagen: "/img/lugares/huayhuaca.jfif",
+//     sombra: "alta",
+//     asientos: true,
+//     agua: null,
+//     banos: true,
+//     rampas: null,
+//     iluminacion: "alta"
+//   },
+//   {
+//     id: 6,
+//     slug: "plaza-san-jeronimo",
+//     nombre: "Plaza de Armas de San Jerónimo",
+//     tipo: "plaza",
+//     zona: "San Jerónimo",
+//     direccion: "Centro de San Jerónimo",
+//     descripcion: "Plaza con jardines ornamentales, árboles, bancas y fuente conmemorativa.",
+//     imagen: "/img/lugares/plaza-san-jeronimo.jfif",
+//     sombra: "media",
+//     asientos: true,
+//     agua: null,
+//     banos: null,
+//     rampas: null,
+//     iluminacion: "alta"
+//   },
+//   {
+//     id: 7,
+//     slug: "bosque-ccoyahuacho",
+//     nombre: "Bosque de Ccoyahuacho",
+//     tipo: "parque",
+//     zona: "San Jerónimo",
+//     direccion: "Centro poblado Totoral, comunidad Ccoyahuacho-Antapata",
+//     descripcion: "Bosque natural con abundantes eucaliptos, pinos, cipreses y alisos.",
+//     imagen: "/img/lugares/ccoyahuacho.jfif",
+//     sombra: "alta",
+//     asientos: null,
+//     agua: null,
+//     banos: null,
+//     rampas: null,
+//     iluminacion: "alta"
+//   },
+//   {
+//     id: 8,
+//     slug: "plaza-talavera",
+//     nombre: "Plaza de Armas de Talavera",
+//     tipo: "plaza",
+//     zona: "Talavera",
+//     direccion: "Centro de Talavera",
+//     descripcion: "Plaza con árboles frutales como capulí, durazno, ciruelo e intimpa.",
+//     imagen: "/img/lugares/plaza-talavera.jfif",
+//     sombra: "media",
+//     asientos: true,
+//     agua: null,
+//     banos: null,
+//     rampas: null,
+//     iluminacion: "alta"
+//   },
+//   {
+//     id: 9,
+//     slug: "laguna-pacucha",
+//     nombre: "Área recreativa de la Laguna de Pacucha",
+//     tipo: "parque",
+//     zona: "Pacucha",
+//     direccion: "Orillas de la Laguna de Pacucha",
+//     descripcion: "Entorno natural con bosques de eucalipto, áreas verdes y totorales.",
+//     imagen: "/img/lugares/laguna-pacucha.jfif",
+//     sombra: "media",
+//     asientos: true,
+//     agua: null,
+//     banos: null,
+//     rampas: null,
+//     iluminacion: "alta"
+//   },
+//   {
+//     id: 10,
+//     slug: "plaza-pampachiri",
+//     nombre: "Plaza de Armas de Pampachiri",
+//     tipo: "plaza",
+//     zona: "Pampachiri",
+//     direccion: "Centro de Pampachiri",
+//     descripcion: "Plaza histórica del distrito, punto de encuentro de habitantes y visitantes.",
+//     imagen: "/img/lugares/plaza-pampachiri.jfif",
+//     sombra: "baja",
+//     asientos: true,
+//     agua: null,
+//     banos: null,
+//     rampas: null,
+//     iluminacion: "alta"
+//   },
+//   {
+//     id: 11,
+//     slug: "parque-del-campesino",
+//     nombre: "Parque del Campesino",
+//     tipo: "parque",
+//     zona: "Andahuaylas",
+//     direccion: "Avenida El Ejército 610",
+//     descripcion: "Parque cultural que representa las actividades agrícolas y la identidad local.",
+//     imagen: "/img/lugares/parque-campesino.jfif",
+//     sombra: "media",
+//     asientos: true,
+//     agua: null,
+//     banos: null,
+//     rampas: true,
+//     iluminacion: "alta"
+//   },
+//   {
+//     id: 12,
+//     slug: "parque-warma-kuyay",
+//     nombre: "Parque Infantil Warma Kuyay",
+//     tipo: "parque",
+//     zona: "Andahuaylas",
+//     direccion: "Sector urbano de Andahuaylas",
+//     descripcion: "Espacio recreativo infantil con juegos y áreas de encuentro familiar.",
+//     imagen: "/img/lugares/warma-kuyay.jpg",
+//     sombra: "baja",
+//     asientos: null,
+//     agua: null,
+//     banos: true,
+//     rampas: true,
+//     iluminacion: "alta"
+//   }
+// ];
+
+
+
 export const espacios = [
   {
     id: 1,
@@ -14,7 +211,9 @@ export const espacios = [
     agua: null,
     banos: null,
     rampas: true,
-    iluminacion: "media"
+    iluminacion: "media",
+    latitud: -13.656423,
+    longitud: -73.389975
   },
   {
     id: 2,
@@ -30,7 +229,9 @@ export const espacios = [
     agua: null,
     banos: null,
     rampas: true,
-    iluminacion: "media"
+    iluminacion: "media",
+    latitud: -13.655980,
+    longitud: -73.383850
   },
   {
     id: 3,
@@ -46,7 +247,9 @@ export const espacios = [
     agua: null,
     banos: true,
     rampas: true,
-    iluminacion: "baja"
+    iluminacion: "baja",
+    latitud: -13.656956,
+    longitud: -73.387654
   },
   {
     id: 4,
@@ -62,7 +265,9 @@ export const espacios = [
     agua: null,
     banos: null,
     rampas: null,
-    iluminacion: "media"
+    iluminacion: "media",
+    latitud: -13.654237,
+    longitud: -73.385468
   },
   {
     id: 5,
@@ -78,7 +283,9 @@ export const espacios = [
     agua: null,
     banos: true,
     rampas: null,
-    iluminacion: "alta"
+    iluminacion: "alta",
+    latitud: -13.66044,
+    longitud: -73.38618
   },
   {
     id: 6,
@@ -94,7 +301,9 @@ export const espacios = [
     agua: null,
     banos: null,
     rampas: null,
-    iluminacion: "alta"
+    iluminacion: "alta",
+    latitud: -13.651390,
+    longitud: -73.365427
   },
   {
     id: 7,
@@ -110,7 +319,9 @@ export const espacios = [
     agua: null,
     banos: null,
     rampas: null,
-    iluminacion: "alta"
+    iluminacion: "alta",
+    latitud: -13.679103,
+    longitud: -73.346629
   },
   {
     id: 8,
@@ -126,7 +337,9 @@ export const espacios = [
     agua: null,
     banos: null,
     rampas: null,
-    iluminacion: "alta"
+    iluminacion: "alta",
+    latitud: -13.653666,
+    longitud: -73.428965
   },
   {
     id: 9,
@@ -134,7 +347,7 @@ export const espacios = [
     nombre: "Área recreativa de la Laguna de Pacucha",
     tipo: "parque",
     zona: "Pacucha",
-    direccion: "Orillas de la Laguna de Pacucha",
+    direccion: "Malecón de Pacucha, orillas de la Laguna de Pacucha",
     descripcion: "Entorno natural con bosques de eucalipto, áreas verdes y totorales.",
     imagen: "/img/lugares/laguna-pacucha.jfif",
     sombra: "media",
@@ -142,7 +355,9 @@ export const espacios = [
     agua: null,
     banos: null,
     rampas: null,
-    iluminacion: "alta"
+    iluminacion: "alta",
+    latitud: -13.60928,
+    longitud: -73.33691
   },
   {
     id: 10,
@@ -158,7 +373,9 @@ export const espacios = [
     agua: null,
     banos: null,
     rampas: null,
-    iluminacion: "alta"
+    iluminacion: "alta",
+    latitud: -14.1861,
+    longitud: -73.5436
   },
   {
     id: 11,
@@ -174,7 +391,9 @@ export const espacios = [
     agua: null,
     banos: null,
     rampas: true,
-    iluminacion: "alta"
+    iluminacion: "alta",
+    latitud: -13.658580,
+    longitud: -73.374870
   },
   {
     id: 12,
@@ -190,6 +409,8 @@ export const espacios = [
     agua: null,
     banos: true,
     rampas: true,
-    iluminacion: "alta"
+    iluminacion: "alta",
+    latitud: -13.656956,
+    longitud: -73.387654
   }
 ];
