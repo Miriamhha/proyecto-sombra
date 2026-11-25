@@ -1,4 +1,3 @@
-
 ---
 const { lugar } = Astro.props;
 
@@ -68,26 +67,42 @@ const mostrarAsientos = (valor) => {
     </div>
 
     <!-- ACCIONES -->
-    <div class="flex justify-between items-center mt-5">
 
-      <a
-        href={`/espacios/${lugar.slug}/`}
-        class="bg-green-800 text-white px-4 py-2 rounded-lg hover:bg-green-900 transition"
-      >
-        Ver detalles
-      </a>
+<!-- ACCIONES -->
+<div class="flex flex-wrap justify-between items-center gap-3 mt-5">
 
-      <button
-        type="button"
-        class="btn-favorito text-2xl"
-        data-slug={lugar.slug}
-        aria-label="Agregar a favoritos"
-        title="Agregar a favoritos"
-      >
-        ♡
-      </button>
+  <a
+    href={`/espacios/${lugar.slug}/`}
+    class="bg-green-800 text-white px-4 py-2 rounded-lg hover:bg-green-900 transition"
+  >
+    Ver detalles
+  </a>
 
-    </div>
+  <div class="flex items-center gap-3">
+
+    <!-- BOTÓN COMPARAR -->
+    <button
+      type="button"
+      class="btn-comparar border border-green-700 text-green-800 px-3 py-2 rounded-lg hover:bg-green-50 transition text-sm font-semibold"
+      data-slug={lugar.slug}
+      aria-label={`Comparar ${lugar.nombre}`}
+      title="Agregar a comparación"
+    >
+      + Comparar
+    </button>
+
+    <!-- BOTÓN FAVORITOS -->
+    <button
+      type="button"
+      class="btn-favorito text-2xl"
+      data-slug={lugar.slug}
+      aria-label="Agregar a favoritos"
+      title="Agregar a favoritos"
+    >
+      ♡
+    </button>
 
   </div>
+</div>
+</div>
 </article>
