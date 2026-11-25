@@ -262,7 +262,7 @@ export const espacios = [
     imagen: "/img/lugares/paccha-arguedas.jfif",
     sombra: "media",
     asientos: true,
-    agua: null,
+    agua: true,
     banos: null,
     rampas: null,
     iluminacion: "media",
@@ -352,7 +352,7 @@ export const espacios = [
     imagen: "/img/lugares/laguna-pacucha.jfif",
     sombra: "media",
     asientos: true,
-    agua: null,
+    agua: true,
     banos: null,
     rampas: null,
     iluminacion: "alta",
@@ -410,7 +410,7 @@ export const espacios = [
     banos: true,
     rampas: true,
     iluminacion: "alta",
-    latitud: -13.656956,
-    longitud: -73.387654
+    latitud: -13.658499,
+    longitud: -73.389573
   }
 ];
